@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import './styles/theme.css';
 import './styles/index.css';
 
@@ -13,21 +11,13 @@ import { DefaultInput } from './components/DefaultInput';
 import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { Footer } from './components/Footer';
-import { Heading } from './components/Heading';
 
 
 
 export default function App() {
-  const [numero, setNumero] = useState(0);
-
-  function handleClick() {
-    setNumero(prevState => prevState + 1);
-  }
 
   return (
     <>
-      <Heading>Número: {numero}</Heading>
-      <button onClick={handleClick}>Aumenta</button>
 
 
       <Container>
