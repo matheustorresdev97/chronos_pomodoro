@@ -1,3 +1,6 @@
+import './styles/theme.css';
+import './styles/index.css';
+
 export default function App() {
   return (
     <>
