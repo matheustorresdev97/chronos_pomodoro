@@ -3,11 +3,11 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Menu } from '../../components/Menu';
 
-type MainTemplateProps = {
+type DefaultLayoutProps = {
   children: React.ReactNode;
 };
 
-export function MainTemplate({ children }: MainTemplateProps) {
+export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <>
       <Container>

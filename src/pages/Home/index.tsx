@@ -1,4 +1,4 @@
-import { MainTemplate } from '../../layouts/MainTemplate';
+import { MainTemplate } from '../../layouts/DefaultLayout';
 
 import { Container } from '../../components/Container';
 import { CountDown } from '../../components/CountDown';

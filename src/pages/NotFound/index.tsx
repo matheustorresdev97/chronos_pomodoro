@@ -1,5 +1,5 @@
 import { Container } from '../../components/Container';
-import { MainTemplate } from '../../layouts/MainTemplate';
+import { MainTemplate } from '../../layouts/DefaultLayout';
 
 export function NotFound() {
   return (
