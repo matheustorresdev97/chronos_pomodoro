@@ -18,19 +18,18 @@ export type TaskActionTypes =
   | 'INTERRUPT_TASK'
   | 'RESET_STATE';
 
-export type TaskActionsWithPayload =
+export type TaskActionsWithPayload = {
+  type: typeof TaskActionTypes.START_TASK;
+  payload: TaskModel;
+};
+
+export type TaskActionsWithoutPayload =
   | {
-      type: typeof TaskActionTypes.START_TASK;
-      payload: TaskModel;
+      type: typeof TaskActionTypes.RESET_STATE;
     }
   | {
       type: typeof TaskActionTypes.INTERRUPT_TASK;
-      payload: TaskModel;
     };
-
-export type TaskActionsWithoutPayload = {
-  type: typeof TaskActionTypes.RESET_STATE;
-};
 
 export type TaskActionModel =
   | TaskActionsWithPayload
