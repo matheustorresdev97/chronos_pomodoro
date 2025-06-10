@@ -6,6 +6,7 @@
 // payload <- os dados extras enviados junto com a action, se necessário para atualizar o estado
 
 import type { TaskModel } from "../../models/TaskModel";
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export const TaskActionTypes = {
   START_TASK: 'START_TASK',
@@ -13,6 +14,7 @@ export const TaskActionTypes = {
   RESET_STATE: 'RESET_STATE',
   COUNT_DOWN: 'COUNT_DOWN',
   COMPLETE_TASK: 'COMPLETE_TASK',
+  CHANGE_SETTINGS: 'CHANGE_SETTINGS'
 } as const;
 
 export type TaskActionTypes =
@@ -21,6 +23,7 @@ export type TaskActionTypes =
   | 'RESET_STATE'
   | 'COUNT_DOWN'
   | 'COMPLETE_TASK'
+  | 'CHANGE_SETTINGS'
   ;
 
 export type TaskActionsWithPayload = {
@@ -45,7 +48,11 @@ export type TaskActionsWithoutPayload =
   }
   | {
     type: typeof TaskActionTypes.COMPLETE_TASK;
-  };
+  }
+  | {
+    type: typeof TaskActionTypes.CHANGE_SETTINGS;
+    payload: TaskStateModel['config'];
+  }
 
 export type TaskActionModel =
   | TaskActionsWithPayload
