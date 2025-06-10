@@ -5,7 +5,7 @@ import { DefaultInput } from '../../components/DefaultInput';
 import { Heading } from '../../components/Heading';
 import { DefaultLayout } from '../../layouts/DefaultLayout';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { showMessage } from '../../adapters/showMessage';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 
@@ -25,6 +25,10 @@ export function Settings() {
     const workTime = Number(workTimeInput.current?.value);
     const shortBreakTime = Number(shortBreakTimeInput.current?.value);
     const longBreakTime = Number(longBreakTimeInput.current?.value);
+
+    useEffect(() => {
+      document.title = 'Configurações - Chronos Pomodoro';
+    }, []);
 
     if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
       formErrors.push('Digite apenas números para TODOS os campos');
